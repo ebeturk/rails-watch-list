@@ -1,0 +1,10 @@
+<h1>Add a new movie bookmark</h1>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.association :movie %>
+  <%= f.input :comment %>
+  <%= f.submit "Bookmark the movie", class: "btn btn-success" %>
+<% end %>
+
+<br>
+  <%= link_to "Go back home", root_path %>

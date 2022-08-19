@@ -1,0 +1,19 @@
+<div class="cover mb-4 d-flex align-items-center justify-content-center">
+  <div class="container">
+
+    <h1>Here is your movie watchlist!</h1>
+    <h3>Here you can make a list of movies you would like to watch</h3>
+    <h1>Which movie would you like to see next?</h1>
+
+    <ul>
+      <% @lists.each do |list| %>
+        <li>
+          <%= link_to list.name, list_path(list) %>
+        </li>
+      <% end %>
+    </ul>
+
+<div class="btn-lg"><%= link_to "Create your own list", new_list_path %></div>
+
+  </div>
+</div>

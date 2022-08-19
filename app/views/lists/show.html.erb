@@ -1,0 +1,25 @@
+<div class="container">
+
+<h1><%= @list.name %>
+</h1>
+
+<%= link_to "Add a movie to the list", new_list_bookmark_path(@list) %>
+<br>
+
+<%# <%= '🌟' * @list.review.rating %>
+
+  <h3><strong> <%= @list.name %> Movies</strong></h3>
+  <ul class="list-group">
+    <% @list.movies.each do |movie| %>
+      <li class="list-group-item"><%= movie.title %>
+    ||   Movie Rating: <%= movie.rating %></li>
+    <% end %>
+  </ul>
+  <br>
+  <%= link_to "Delete this list",
+  list_path(@list),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+  <br>
+  <%= link_to "Go back home", root_path %>
+
+</div>
